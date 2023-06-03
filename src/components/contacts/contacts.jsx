@@ -6,7 +6,7 @@ import Contact from "../contact/contact";
 import { useSelector } from "react-redux";
 
 const Contacts = () => {
-  const userData = useSelector((state) => state.posts);
+  const userData = useSelector((state) => state.user);
   const { postItems } = userData;
   const [isTel, setTel] = useState("");
 

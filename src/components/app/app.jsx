@@ -8,7 +8,7 @@ import Loader from "../loader/loader";
 import { useSelector } from "react-redux";
 
 function App() {
-  const userData = useSelector((state) => state.posts);
+  const userData = useSelector((state) => state.user);
   const { status } = userData;
   const [isModal, setModal] = useState(true);
   const [isErrorModal, setErrorModal] = useState(true);
