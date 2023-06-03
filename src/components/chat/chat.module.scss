@@ -1,0 +1,10 @@
+.chat {
+  display: flex;
+  margin: 19px 0 0;
+  width: calc(100% - 38px);
+  max-width: 1600px;
+  height: calc(100% - 38px);
+  min-height: 512px;
+  z-index: 1;
+  box-shadow: 0 6px 18px rgba(11, 20, 26, 0.05);
+}

@@ -1,0 +1,25 @@
+.footer {
+  background-color: #fff;
+  border-right: 1px solid #d1d7db;
+
+  &__input {
+    display: flex;
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f2f5;
+
+    button {
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 20px;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    margin: 0 0 0 12px;
+    gap: 5px;
+  }
+}

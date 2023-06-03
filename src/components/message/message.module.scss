@@ -1,0 +1,53 @@
+.message {
+  background-color: #d9fdd3;
+  border-radius: 7.5px 0 7.5px 7.5px;
+  max-width: 65%;
+  position: relative;
+  flex: none;
+  font-size: 14.2px;
+  line-height: 19px;
+  color: #111b21;
+  padding: 8px;
+
+  span {
+    right: -7px;
+    color: #d9fdd3;
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 8px;
+    height: 13px;
+
+    svg {
+      display: block;
+      pointer-events: none;
+    }
+  }
+
+  p {
+    font-size: 14.2px;
+    line-height: 19px;
+    color: #111b21;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+  }
+
+  &.user {
+    align-self: flex-end;
+  }
+
+  &.interlocutor {
+    align-self: flex-start;
+    background-color: #fff;
+    border-radius: 0 7.5px 7.5px 7.5px;
+
+    span {
+      right: 0;
+      left: -7px;
+    }
+
+    svg path {
+      fill: #fff;
+    }
+  }
+}

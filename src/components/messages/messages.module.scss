@@ -1,0 +1,16 @@
+.messages {
+  flex-grow: 1;
+  background-image: (url(../../images/school.png));
+  background-color: #eae6df;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 63px;
+    gap: 63px;
+    overflow-y: auto;
+    height: calc(100vh - 147px);
+  }
+}
+
+
