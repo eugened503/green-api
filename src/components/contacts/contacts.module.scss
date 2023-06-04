@@ -4,10 +4,20 @@
   background-color: #fff;
   border-right: 1px solid #d1d7db;
 
+  &__wrapper {
+    border-bottom: 1px solid #f0f2f5;
+
+    span {
+      display: block;
+      color: red;
+      font-size: 12px;
+      padding: 0 0 5px 14px;
+    }
+  }
+
   &__input {
     display: flex;
     padding: 10px 12px;
-    border-bottom: 1px solid #f0f2f5;
 
     button {
       display: flex;

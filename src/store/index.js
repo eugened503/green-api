@@ -1,8 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit';
-import userReducer from './toolkitReducer';
+import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers } from "redux";
+import userReducer from "./userReducer";
+import contactsReducer from "./contactsReducer";
 
-export const store = configureStore({
-  reducer: {
-    user: userReducer,
-  },
-})
+const reducer = combineReducers({
+  user: userReducer,
+  contacts: contactsReducer,
+});
+
+export const store = configureStore({ reducer });

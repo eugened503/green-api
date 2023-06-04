@@ -1,7 +1,7 @@
 import styles from "./modal.module.scss";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getUser } from "../../store/toolkitReducer";
+import { getUser } from "../../store/userReducer";
 
 const Modal = ({isModal, setModal}) => {
   const [idInstance, setIdInstance] = useState("");

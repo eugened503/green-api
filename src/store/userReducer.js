@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
-  postItems: [],
+  user: [],
   status: "idle",
   error: null,
 };
@@ -36,7 +36,7 @@ export const getUser = createAsyncThunk(
 //   }
 // );
 
-const postSlice = createSlice({
+const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {},
@@ -47,16 +47,16 @@ const postSlice = createSlice({
       })
       .addCase(getUser.fulfilled, (state, action) => {
         state.status = "successful";
-        state.postItems = state.postItems.concat(action.payload);
+        state.user = state.user.concat(action.payload);
       })
       .addCase(getUser.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       })
       // .addCase(addPost.fulfilled, (state, action) => {
-      //   state.postItems.push(action.payload);
+      //   state.user.push(action.payload);
       // });
   },
 });
 
-export default postSlice.reducer;
+export default userSlice.reducer;
