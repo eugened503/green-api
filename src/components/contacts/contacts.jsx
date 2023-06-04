@@ -1,16 +1,15 @@
+import styles from "./contacts.module.scss";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import styles from "./contacts.module.scss";
 import { ReactComponent as AddIcon } from "../../images/plus.svg";
 import Contact from "../contact/contact";
 import { addContact } from "../../store/contactsReducer";
 
 const Contacts = () => {
   const { user } = useSelector((state) => state.user);
-  const { contacts } = useSelector((state) => state.contacts);
+  const { contacts, currentNum } = useSelector((state) => state.contacts);
   const [isTel, setTel] = useState("");
   const [isNumberInter, setNumberInter] = useState("");
-  const [isCurrentId, setCurrentId] = useState(null);
   const [isError, setError] = useState("");
   const dispatch = useDispatch();
 
@@ -55,9 +54,7 @@ const Contacts = () => {
             key={contact.id}
             tel={contact.number}
             status={"user"}
-            active={isCurrentId === contact.id}
-            setCurrentId={setCurrentId}
-            id={contact.id}
+            active={currentNum === contact.number}
           />
         ))}
       </div>

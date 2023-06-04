@@ -1,12 +1,15 @@
 import styles from "./messages.module.scss";
+import { useSelector } from "react-redux";
 import Contact from "../contact/contact";
 import Message from "../message/message";
 import MessagesFooter from "../messagesFooter/messagesFooter";
 
 const Messages = () => {
+  const { currentNum } = useSelector((state) => state.contacts);
+
   return (
     <div className={styles.messages}>
-      <Contact />
+      <Contact tel={currentNum}/>
       <div className={styles.messages__container}>
         <Message
           text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
