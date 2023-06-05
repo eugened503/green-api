@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import baseUrl from "../utils/baseUrl.js";
 
 const initialState = {
   user: [],
@@ -14,9 +15,8 @@ export const getUser = createAsyncThunk(
   async ({ idInstance, apiTokenInstance }, thunkAPI) => {
     try {
       const res = await axios.get(
-        "https://api.green-api.com/waInstance" +
-          `${idInstance}` +
-          "/getSettings/" +
+        baseUrl + `${idInstance}` +
+         "/getSettings/" +
           `${apiTokenInstance}`
       );
       return res.data;

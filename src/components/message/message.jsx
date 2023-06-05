@@ -4,8 +4,8 @@ import { ReactComponent as TailInterlocutor } from "../../images/tail-interlocut
 
 const Message = ({text, status}) => {
 
-const userClass = status === 'user' ? styles.user : styles.interlocutor;
-const tail = status === 'user' ? <TailUser /> : <TailInterlocutor />;
+const userClass = status === 'sent' ? styles.user : styles.interlocutor;
+const tail = status === 'sent' ? <TailUser /> : <TailInterlocutor />;
 
   return (
     <div className={`${styles.message} ${userClass}`}>

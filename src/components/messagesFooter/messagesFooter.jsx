@@ -9,7 +9,7 @@ const MessagesFooter = () => {
   const { idInstance, apiTokenInstance } = useSelector((state) => state.user);
   const [isMessage, setMessage] = useState("");
   const dispatch = useDispatch();
-
+ 
   const sendMessage = () => {
     dispatch(
       postMessage({
