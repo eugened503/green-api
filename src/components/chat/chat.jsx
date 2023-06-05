@@ -5,8 +5,13 @@ import Contacts from "../contacts/contacts";
 const Chat = () => {
   return (
     <div className={styles.chat}>
-      <Contacts></Contacts>
-      <Messages></Messages>
+      <div className={styles.chat__desktop}>
+        <Contacts />
+      </div>
+      <Messages />
+      <div className={styles.chat__mobile}>
+        <Contacts />
+      </div>
     </div>
   );
 };

@@ -1,7 +1,25 @@
 .messages {
+  position: relative;
   flex-grow: 1;
   background-image: (url(../../images/school.png));
   background-color: #eae6df;
+
+  // &__button {
+  //   display: none;
+  //   position: absolute;
+  //   z-index: 1;
+  //   top: 18px;
+  //   left: 68px;
+  //   svg {
+  //     width: 35px;
+  //   }
+  //   svg path {
+  //     fill: #00a884;
+  //   }
+  //   @media screen and (max-width: 705px) {
+  //     display: flex;
+  //   }
+  // }
 
   &__container {
     display: flex;
@@ -9,8 +27,6 @@
     padding: 63px;
     gap: 20px;
     overflow-y: auto;
-    height: calc(100vh - 147px);
+    height: calc(100% - 128px);
   }
 }
-
-

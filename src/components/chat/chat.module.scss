@@ -7,4 +7,22 @@
   min-height: 512px;
   z-index: 1;
   box-shadow: 0 6px 18px rgba(11, 20, 26, 0.05);
+
+  @media screen and (max-width: 705px) {
+    flex-direction: column;
+  }
+  &__desktop {
+    flex: 0 0 30%;
+    max-width: 30%;
+    @media screen and (max-width: 705px) {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+    @media screen and (max-width: 705px) {
+      display: block;
+    }
+  }
 }

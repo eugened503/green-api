@@ -1,12 +1,18 @@
 import styles from "./modal.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getUser } from "../../store/userReducer";
 
-const Modal = ({isModal, setModal}) => {
+const Modal = ({ isModal, setModal }) => {
   const [idInstance, setIdInstance] = useState("");
   const [apiTokenInstance, setApiTokenInstance] = useState("");
+  const [isError, setError] = useState("");
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setError("");
+  }, [idInstance, apiTokenInstance]);
+
 
   if (!isModal) return null;
 
@@ -16,6 +22,8 @@ const Modal = ({isModal, setModal}) => {
       const userData = { idInstance, apiTokenInstance };
       dispatch(getUser(userData));
       setModal(false);
+    } else {
+      setError("Поля должны быть заполнены!");
     }
   };
 
@@ -38,6 +46,7 @@ const Modal = ({isModal, setModal}) => {
             onChange={(e) => setApiTokenInstance(e.target.value.trim())}
             value={apiTokenInstance}
           ></input>
+          <span>{isError}</span>
           <button type="submit" className={styles.modal__submit}>
             Sign in
           </button>

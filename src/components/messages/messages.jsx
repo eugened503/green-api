@@ -12,7 +12,7 @@ import {
 const Messages = () => {
   const { currentNum } = useSelector((state) => state.contacts);
   const { idInstance, apiTokenInstance } = useSelector((state) => state.user);
-  const { message, receiptId, result } = useSelector((state) => state.message);
+  const { message, receiptId } = useSelector((state) => state.message);
   const [isCurrentMessage, setCurrentMessage] = useState(null);
   const dispatch = useDispatch();
 
@@ -48,29 +48,6 @@ const Messages = () => {
     }
   }, [apiTokenInstance, dispatch, idInstance, receiptId]);
 
-  // const getReceiveNotification = () => {
-  //   dispatch(
-  //     receiveNotification({
-  //       idInstance,
-  //       apiTokenInstance,
-  //     })
-  //   );
-  // };
-
-  // const deleteReceiveNotification = () => {
-  //   dispatch(
-  //     deleteNotification({
-  //       idInstance,
-  //       apiTokenInstance,
-  //       receiptId,
-  //     })
-  //   );
-  // };
-
-  // console.log("receiptId", receiptId);
-  // console.log("result", result);
-  // console.log("message", message);
-
   let content;
 
   if (isCurrentMessage) {
@@ -89,31 +66,6 @@ const Messages = () => {
     <div className={styles.messages}>
       <Contact tel={currentNum} />
       {content}
-      {/* <div>
-        <button
-          onClick={getReceiveNotification}
-          style={{
-            backgroundColor: "salmon",
-            color: "blue",
-            width: "150px",
-            height: "50px",
-            margin: "0 20px 0 0",
-          }}
-        >
-          получить
-        </button>
-        <button
-          onClick={deleteReceiveNotification}
-          style={{
-            backgroundColor: "salmon",
-            color: "blue",
-            width: "150px",
-            height: "50px",
-          }}
-        >
-          удалить
-        </button>
-      </div> */}
       <MessagesFooter />
     </div>
   );

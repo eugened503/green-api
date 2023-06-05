@@ -12,6 +12,7 @@ const Contacts = () => {
   const [isNumberInter, setNumberInter] = useState("");
   const [isError, setError] = useState("");
   const dispatch = useDispatch();
+  console.log(contacts);
 
   useEffect(() => {
     if (user.length > 0) {
@@ -19,13 +20,25 @@ const Contacts = () => {
     }
   }, [user]);
 
+  useEffect(() => {
+    setError("");
+  }, [isNumberInter]);
+
   const handleContact = (num) => {
-    if (!contacts.some((item) => item.number === num)) {
-      dispatch(addContact(num));
-      setNumberInter("");
-      setError("");
+    if (isNumberInter !== "") {
+      if (!contacts.some((item) => item.number === num)) {
+        if (contacts.length === 3) {
+          setError("Допустимое количество чатов: 3");
+          return;
+        }
+        dispatch(addContact(num));
+        setNumberInter("");
+        setError("");
+      } else {
+        setError("Номер есть в списке контактов!");
+      }
     } else {
-      setError("Номер есть в списке контактов!");
+      setError("Введите номер!");
     }
   };
 
@@ -40,11 +53,9 @@ const Contacts = () => {
             type="text"
             placeholder="введите номер"
           />
-          <div className={styles.contacts__buttons}>
-            <button onClick={() => handleContact(isNumberInter)} type="button">
-              <AddIcon />
-            </button>
-          </div>
+          <button onClick={() => handleContact(isNumberInter)} type="button">
+            <AddIcon />
+          </button>
         </div>
         <span>{isError}</span>
       </div>

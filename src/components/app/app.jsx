@@ -32,7 +32,7 @@ function App() {
     <div className={styles.app}>
       <Header />
       <Chat />
-      <Modal isModal={isModal} setModal={setModal} />
+      {/* <Modal isModal={isModal} setModal={setModal} /> */}
       {messageStatus}
     </div>
   );
