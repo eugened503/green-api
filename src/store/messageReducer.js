@@ -104,7 +104,6 @@ const messageSlice = createSlice({
       })
       .addCase(receiveNotification.fulfilled, (state, action) => {
         state.statusReceiveNotification = "successful";
-        console.log("receiveNotification action", action);
         const receiptId = action.payload?.receiptId || null;
         state.receiptId = receiptId;
 
@@ -145,7 +144,6 @@ const messageSlice = createSlice({
       })
       .addCase(deleteNotification.fulfilled, (state, action) => {
         state.statusDeleteNotification = "successful";
-        console.log("deleteNotification action", action);
         state.result = action.payload.result;
         state.receiptId = null;
       })

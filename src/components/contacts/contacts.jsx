@@ -12,7 +12,6 @@ const Contacts = () => {
   const [isNumberInter, setNumberInter] = useState("");
   const [isError, setError] = useState("");
   const dispatch = useDispatch();
-  console.log(contacts);
 
   useEffect(() => {
     if (user.length > 0) {
