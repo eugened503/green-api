@@ -27,12 +27,16 @@ const Messages = () => {
 
   useEffect(() => {
     if (idInstance && apiTokenInstance) {
-      setInterval(() => dispatch(
-      receiveNotification({
-        idInstance,
-        apiTokenInstance,
-      })
-    ), 7000);
+      setInterval(
+        () =>
+          dispatch(
+            receiveNotification({
+              idInstance,
+              apiTokenInstance,
+            })
+          ),
+        7000
+      );
     }
   }, [dispatch, idInstance, apiTokenInstance]);
 
@@ -46,7 +50,7 @@ const Messages = () => {
         })
       );
     }
-  }, [apiTokenInstance, dispatch, idInstance, receiptId]);
+  }, [dispatch, apiTokenInstance, idInstance, receiptId]);
 
   let content;
 

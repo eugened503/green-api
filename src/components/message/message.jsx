@@ -3,7 +3,6 @@ import { ReactComponent as TailUser } from "../../images/tail-user.svg";
 import { ReactComponent as TailInterlocutor } from "../../images/tail-interlocutor.svg";
 
 const Message = ({text, status}) => {
-
 const userClass = status === 'sent' ? styles.user : styles.interlocutor;
 const tail = status === 'sent' ? <TailUser /> : <TailInterlocutor />;
 
